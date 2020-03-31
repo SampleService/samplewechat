@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: SampleWeChat
+
+mvf4ms:
+  version: 1.5.1
+  dependencies:
+    - name: dependency1
+      dependence:
+        - id: weather
+          serviceName: SampleCNWeather
+          patternUrl: /weather
+          versions:
+            - 2.1.0
+        - id: PDelivery
+          serviceName: SampleJingDong
+          patternUrl: /PDelivery
+          versions:
+            - 2.4.1
+
+server:
+  port: 8080
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://{REGISTRY_IP}:{REGISTRY_PORT}/eureka
