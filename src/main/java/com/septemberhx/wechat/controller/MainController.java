@@ -24,21 +24,8 @@ public class MainController {
 
     @PostMapping(path = "/pay")
     @ResponseBody
-    @MFuncDescription(value = "pay", level = 3)
+    @MFuncDescription(value = "pay", level = 4)
     public MResponse pay(@RequestBody MResponse params, HttpServletRequest request) {
         return MBaseUtils.generateResInKBSize(5);
-    }
-
-    @PostMapping(path = "/life")
-    @ResponseBody
-    @MFuncDescription(value = "life", level = 2)
-    public MResponse life(@RequestBody MResponse params, HttpServletRequest request) {
-        boolean r = MBaseUtils.verDepRequest("weather", 19, request, logger)
-                && MBaseUtils.verDepRequest("PDelivery", 13, request, logger);
-
-        if (!r) {
-            return MResponse.failResponse();
-        }
-        return MBaseUtils.generateResInKBSize(9);
     }
 }

@@ -3,20 +3,7 @@ spring:
     name: SampleWeChat
 
 mvf4ms:
-  version: 2.0.0
-  dependencies:
-    - name: dependency1
-      dependence:
-        - id: weather
-          serviceName: SampleCNWeather
-          patternUrl: /weather
-          versions:
-            - 2.1.0
-        - id: PDelivery
-          function: PDelivery
-          slas:
-            - 2
-            - 4
+  version: 3.0.1
 
 server:
   port: 8080
